@@ -5,7 +5,7 @@
 
 </IfModule>
 
-<Files ~ "\.(cfg|ini|xml)$">
+<Files ~ "\.(ini|xml)$">
     order allow,deny
     deny from all
 </Files> 
