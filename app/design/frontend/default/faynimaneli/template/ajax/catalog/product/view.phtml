@@ -69,9 +69,8 @@
 
     <script type="text/javascript">
     //<![CDATA[
-        /*
-        var productAddToCartForm = new VarienForm('product_addtocart_form');
-        productAddToCartForm.submit = function(button, url) {
+        var productEditCartForm = new VarienForm('product_addtocart_form');
+        productEditCartForm.submit = function(button, url) {
             if (this.validator.validate()) {
                 var form = this.form;
                 var oldUrl = form.action;
@@ -93,8 +92,24 @@
                     button.disabled = true;
                 }
             }
-        }.bind(productAddToCartForm);
-        */
+        }.bind(productEditCartForm);
+
+        productEditCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productEditCartForm);
+
         /*this.form.submit();*/
 
         var productAddToCartForm = new VarienForm('product_addtocart_form');

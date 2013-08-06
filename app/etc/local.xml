@@ -42,7 +42,7 @@
                 <connection>
                     <host><![CDATA[localhost]]></host>
                     <username><![CDATA[c3magento]]></username>
-                    <password><![CDATA[magento_pwd]]></password>
+                    <password><![CDATA[c3magento_pwd]]></password>
                     <dbname><![CDATA[c3magento]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
